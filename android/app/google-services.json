@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "81337669726",
+    "project_id": "edgefly-academy-9b88f",
+    "storage_bucket": "edgefly-academy-9b88f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81337669726:android:97fc903de306453cd7fccf",
+        "android_client_info": {
+          "package_name": "com.example.edgefly_academy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81337669726-2m4o04kipm7mq0vjfjvhdtc4aibejqqf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.edgefly_academy",
+            "certificate_hash": "d78c0b4ecf7181f6612fe7c7ad9a7f7a2920b242"
+          }
+        },
+        {
+          "client_id": "81337669726-9biir1n63f1ivsn92pj0e91ake5gdd53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxJdRdMYeBd6fhgiv-TM0XLZ9swMBMIzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81337669726-9biir1n63f1ivsn92pj0e91ake5gdd53.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "81337669726-lieiinh07km95u9p5cmksbaui9f4i9np.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.edgeflyAcademy"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81337669726:android:0bf7e1a20a1698f0d7fccf",
+        "android_client_info": {
+          "package_name": "com.example.edgefly_academy_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81337669726-9biir1n63f1ivsn92pj0e91ake5gdd53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxJdRdMYeBd6fhgiv-TM0XLZ9swMBMIzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81337669726-9biir1n63f1ivsn92pj0e91ake5gdd53.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "81337669726-lieiinh07km95u9p5cmksbaui9f4i9np.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.edgeflyAcademy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
