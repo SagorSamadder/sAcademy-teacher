@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'view/auth_screen/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'view/home_screen/home_screen.dart';
+import 'view/settings/view/setting_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,6 +46,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => const HomeScreen()),
+        GetPage(name: '/settings', page: () => const SettingScreen()),
+      ],
       title: 'Edgefly Academy',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
