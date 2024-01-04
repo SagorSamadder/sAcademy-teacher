@@ -15,13 +15,13 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             title: const Text('Home'),
             onTap: () {
-              Get.to(const HomeScreen());
+              Get.to(() => const HomeScreen());
             },
           ),
           ListTile(
             title: const Text('Settings'),
             onTap: () {
-              Get.to(const SettingScreen());
+              Get.to(() => const SettingScreen());
             },
           ),
         ],

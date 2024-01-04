@@ -15,51 +15,42 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  late User? currentUser;
-  bool isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    checkUser();
-  }
-
-  checkUser() {
-    FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      setState(() {
-        currentUser = user;
-        isLoading = false;
-      });
+  var isLogin = false;
+  var auth = FirebaseAuth.instance;
+  //checking if user loged in or not
+  chekIfLogin() async {
+    auth.authStateChanges().listen((User? user) {
+      if (user != null && mounted) {
+        setState(() {
+          isLogin = true;
+        });
+      }
     });
   }
 
   @override
+  void initState() {
+    chekIfLogin();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (isLoading) {
-      return const MaterialApp(
-        home: Scaffold(
-          body: Center(
-            child: CircularProgressIndicator(),
-          ),
-        ),
-      );
-    } else {
-      return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Learn Admin',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: currentUser != null ? const HomeScreen() : const LoginPage(),
-      );
-    }
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Edgefly Academy',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: isLogin ? const HomeScreen() : const LoginPage(),
+    );
   }
 }
