@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../add_question/add_question.dart';
 import '../widgets/drawer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,15 +17,13 @@ class HomeScreen extends StatelessWidget {
         child: Text('Home Screen Content'),
       ),
       drawer: const MyDrawer(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.to(() => const AddQuestionScreen());
+        },
+        backgroundColor: Colors.deepPurple.shade400,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
-
-
-// floatingActionButton: FloatingActionButton(
-//         onPressed: () {
-//           Get.to(() => const AddQuestionScreen());
-//         },
-//         backgroundColor: Colors.deepPurple.shade400,
-//         child: const Icon(Icons.add),
-//       ),
