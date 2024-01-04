@@ -364,7 +364,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
           actions: [
             TextButton(
               onPressed: () {
-                Get.to(() => const DashboardScreen());
+                Get.to(() => const HomeScreen());
               },
               child: const Text('No'),
             ),

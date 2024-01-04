@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                               );
                               VxToast.show(context, msg: "login successed");
                               controller.isloading(false);
-                              Get.offAll(() => const DashboardScreen());
+                              Get.offAll(() => const HomeScreen());
                             } else {
                               controller.isloading(false);
                             }

@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: currentUser != null ? const DashboardScreen() : const LoginPage(),
+        home: currentUser != null ? const HomeScreen() : const LoginPage(),
       );
     }
   }

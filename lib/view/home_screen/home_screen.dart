@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../add_question/add_question.dart';
 
-class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+import '../widgets/drawer.dart';
 
-  @override
-  State<DashboardScreen> createState() => _DashboardScreenState();
-}
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
-class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Get.to(() => const AddQuestionScreen());
-        },
-        backgroundColor: Colors.deepPurple.shade400,
-        child: const Icon(Icons.add),
+      appBar: AppBar(
+        title: const Text('Home'),
       ),
+      body: const Center(
+        child: Text('Home Screen Content'),
+      ),
+      drawer: const MyDrawer(),
     );
   }
 }
+
+
+// floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           Get.to(() => const AddQuestionScreen());
+//         },
+//         backgroundColor: Colors.deepPurple.shade400,
+//         child: const Icon(Icons.add),
+//       ),
