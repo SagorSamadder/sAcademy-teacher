@@ -13,10 +13,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home'),
       ),
-      body: const Center(
-        child: Text('Home Screen Content'),
-      ),
       drawer: const MyDrawer(),
+      body: const Center(
+        child: Text('Home Screen'),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Get.to(() => const AddQuestionScreen());
