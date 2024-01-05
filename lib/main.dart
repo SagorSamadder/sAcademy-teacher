@@ -2,7 +2,7 @@ import 'package:edgefly_academy_admin/firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'app/auth_screen/login_page.dart';
+import 'app/auth_screen/view/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'app/home_screen/home_screen.dart';
 import 'app/settings/view/setting_view.dart';

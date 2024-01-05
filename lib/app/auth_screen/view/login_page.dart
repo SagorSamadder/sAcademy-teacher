@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import '../add_question/controller/auth_controller.dart';
-import '../home_screen/home_screen.dart';
-import '../../general/common_widgets/coustom_textfield.dart';
+import '../controller/auth_controller.dart';
+import '../../home_screen/home_screen.dart';
+import '../../../general/common_widgets/coustom_textfield.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
