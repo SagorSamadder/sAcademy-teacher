@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import '../home_screen/home_screen.dart';
+import '../../home_screen/home_screen.dart';
 
 class AddQuestionScreen extends StatefulWidget {
   const AddQuestionScreen({super.key});

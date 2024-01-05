@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../add_question/add_question.dart';
+import '../add_question/view/add_question.dart';
 import '../widgets/drawer.dart';
 
 class HomeScreen extends StatelessWidget {
