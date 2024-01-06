@@ -70,69 +70,78 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  border:
-                      Border.all(width: 2.0, color: const Color(0xFF134668)),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: DropdownButtonFormField<String>(
-                  hint: const Text('Select category'),
-                  onChanged: (value) {
-                    setState(() {
-                      selectedField1 = value!;
-                      print('$value');
-                    });
-                  },
-                  items: field1Items.map((item) {
-                    return DropdownMenuItem<String>(
-                      value: item,
-                      child: Text(item),
-                    );
-                  }).toList(),
-                ),
-              ),
-              const SizedBox(height: 10),
-              Container(
-                decoration: BoxDecoration(
-                  border:
-                      Border.all(width: 2.0, color: const Color(0xFF134668)),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: DropdownButtonFormField<String>(
-                  hint: const Text('Select Subject'),
-                  onChanged: (value) {
-                    setState(() {
-                      selectedField2 = value!;
-                    });
-                  },
-                  items: field2Items.map((item) {
-                    return DropdownMenuItem<String>(
-                      value: item,
-                      child: Text(item),
-                    );
-                  }).toList(),
-                ),
-              ),
-              const SizedBox(height: 10),
-              Container(
-                decoration: BoxDecoration(
-                  border:
-                      Border.all(width: 2.0, color: const Color(0xFF134668)),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: DropdownButtonFormField<String>(
-                  hint: const Text('Select Chapter'),
-                  onChanged: (value) {
-                    setState(() {
-                      selectedField3 = value!;
-                    });
-                  },
-                  items: field3Items.map((item) {
-                    return DropdownMenuItem<String>(
-                      value: item,
-                      child: Text(item),
-                    );
-                  }).toList(),
+                    color: const Color(0xff4bb050),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Column(
+                  children: [
+                    10.heightBox,
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: DropdownButtonFormField<String>(
+                        hint: const Text('Select category'),
+                        onChanged: (value) {
+                          setState(() {
+                            selectedField1 = value!;
+                            print('$value');
+                          });
+                        },
+                        items: field1Items.map((item) {
+                          return DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(item),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: DropdownButtonFormField<String>(
+                        hint: const Text('Select Subject'),
+                        onChanged: (value) {
+                          setState(() {
+                            selectedField2 = value!;
+                          });
+                        },
+                        items: field2Items.map((item) {
+                          return DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(item),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: DropdownButtonFormField<String>(
+                        hint: const Text('Select Chapter'),
+                        onChanged: (value) {
+                          setState(() {
+                            selectedField3 = value!;
+                          });
+                        },
+                        items: field3Items.map((item) {
+                          return DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(item),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                    10.heightBox,
+                  ],
                 ),
               ),
               const SizedBox(height: 20),
