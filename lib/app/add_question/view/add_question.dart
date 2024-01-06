@@ -78,6 +78,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                   children: [
                     10.heightBox,
                     Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8),
@@ -100,6 +101,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                     ),
                     const SizedBox(height: 10),
                     Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8),
@@ -121,6 +123,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                     ),
                     const SizedBox(height: 10),
                     Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8),
