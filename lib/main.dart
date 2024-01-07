@@ -25,7 +25,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var isLogin = false;
   var auth = FirebaseAuth.instance;
-  //checking if user loged in or not
+  //checking if user logged in or not
   chekIfLogin() async {
     auth.authStateChanges().listen((User? user) {
       if (user != null && mounted) {
@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
         GetPage(name: '/', page: () => const HomeScreen()),
         GetPage(name: '/settings', page: () => const SettingScreen()),
       ],
-      title: 'Edgefly Academy',
+      title: 'Edge fly Academy',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
