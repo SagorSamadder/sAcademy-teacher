@@ -39,10 +39,10 @@
               "client_type": 3
             },
             {
-              "client_id": "81337669726-lieiinh07km95u9p5cmksbaui9f4i9np.apps.googleusercontent.com",
+              "client_id": "81337669726-iltrpe2085sq4j9p7b0dqc8t615rqn02.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.edgeflyAcademy"
+                "bundle_id": "com.example.edgeflyAcademyAdmin"
               }
             }
           ]
@@ -51,7 +51,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:81337669726:android:0bf7e1a20a1698f0d7fccf",
+        "mobilesdk_app_id": "1:81337669726:android:47888164c9bec32ad7fccf",
         "android_client_info": {
           "package_name": "com.example.edgefly_academy_admin"
         }
@@ -75,10 +75,10 @@
               "client_type": 3
             },
             {
-              "client_id": "81337669726-lieiinh07km95u9p5cmksbaui9f4i9np.apps.googleusercontent.com",
+              "client_id": "81337669726-iltrpe2085sq4j9p7b0dqc8t615rqn02.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.edgeflyAcademy"
+                "bundle_id": "com.example.edgeflyAcademyAdmin"
               }
             }
           ]

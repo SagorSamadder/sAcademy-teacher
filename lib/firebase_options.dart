@@ -48,7 +48,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBIC1sPcepLp_EOgQlt1YFCflSpyzZS2d0',
-    appId: '1:81337669726:web:c719676edff26f77d7fccf',
+    appId: '1:81337669726:web:3162667a16b4b654d7fccf',
     messagingSenderId: '81337669726',
     projectId: 'edgefly-academy-9b88f',
     authDomain: 'edgefly-academy-9b88f.firebaseapp.com',
@@ -57,7 +57,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCxJdRdMYeBd6fhgiv-TM0XLZ9swMBMIzk',
-    appId: '1:81337669726:android:0bf7e1a20a1698f0d7fccf',
+    appId: '1:81337669726:android:47888164c9bec32ad7fccf',
     messagingSenderId: '81337669726',
     projectId: 'edgefly-academy-9b88f',
     storageBucket: 'edgefly-academy-9b88f.appspot.com',
@@ -65,7 +65,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCFAul-b6J78zJEdRsaPLzoypSEdiCvRkQ',
-    appId: '1:81337669726:ios:3eea879fde42e45bd7fccf',
+    appId: '1:81337669726:ios:2dbae6ddfceeb802d7fccf',
     messagingSenderId: '81337669726',
     projectId: 'edgefly-academy-9b88f',
     storageBucket: 'edgefly-academy-9b88f.appspot.com',
