@@ -72,8 +72,9 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    color: const Color(0xff4bb050),
-                    borderRadius: BorderRadius.circular(20)),
+                  color: const Color(0xff4bb050),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: Column(
                   children: [
                     10.heightBox,
@@ -148,151 +149,177 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text('Now Write Question'),
-              const SizedBox(
-                height: 8,
-              ),
-              TextFormField(
-                controller: questionController,
-                decoration: InputDecoration(
-                  labelText: 'Enter the question',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Color(0xFF134668)),
-                  ),
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: const Color(0xff4bb050),
+                  borderRadius: BorderRadius.circular(20),
                 ),
-              ),
-              const SizedBox(height: 10),
-              const Text('Options:'),
-              const SizedBox(height: 15),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    'Now Write the Question'.text.white.make(),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    TextFormField(
+                      controller: questionController,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        labelText: 'Enter the question',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: const BorderSide(
+                              width: 2.0, color: Color(0xFF134668)),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text('Options:'),
+                    const SizedBox(height: 15),
 
-              //option 1
-              TextFormField(
-                controller: optioncontroller1,
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.circle),
-                  labelText: 'Option 1',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Color(0xFF134668)),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              //option 2
-              TextFormField(
-                controller: optioncontroller2,
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.circle),
-                  labelText: 'Option 2',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Color(0xFF134668)),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 10),
-              //option 3
-              TextFormField(
-                controller: optioncontroller3,
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.circle),
-                  labelText: 'Option 3',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Color(0xFF134668)),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 10),
-              //option 4
-              TextFormField(
-                controller: optioncontroller4,
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.circle),
-                  labelText: 'Option 4',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Color(0xFF134668)),
-                  ),
-                ),
-              ),
+                    //option 1
+                    TextFormField(
+                      controller: optioncontroller1,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        prefixIcon: const Icon(Icons.circle),
+                        labelText: 'Option 1',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: const BorderSide(
+                              width: 2.0, color: Color(0xFF134668)),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    //option 2
+                    TextFormField(
+                      controller: optioncontroller2,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        prefixIcon: const Icon(Icons.circle),
+                        labelText: 'Option 2',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: const BorderSide(
+                              width: 2.0, color: Color(0xFF134668)),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    //option 3
+                    TextFormField(
+                      controller: optioncontroller3,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        prefixIcon: const Icon(Icons.circle),
+                        labelText: 'Option 3',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: const BorderSide(
+                              width: 2.0, color: Color(0xFF134668)),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    //option 4
+                    TextFormField(
+                      controller: optioncontroller4,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        prefixIcon: const Icon(Icons.circle),
+                        labelText: 'Option 4',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: const BorderSide(
+                              width: 2.0, color: Color(0xFF134668)),
+                        ),
+                      ),
+                    ),
 
-              const SizedBox(height: 20),
-              TextFormField(
-                controller: correctAnswerController,
-                decoration: InputDecoration(
-                  labelText: 'Enter the correct answer',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Colors.grey),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide:
-                        const BorderSide(width: 2.0, color: Color(0xFF134668)),
-                  ),
+                    const SizedBox(height: 20),
+                    TextFormField(
+                      controller: correctAnswerController,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        labelText: 'Enter the correct answer',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide:
+                              const BorderSide(width: 2.0, color: Colors.grey),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: const BorderSide(
+                              width: 2.0, color: Color(0xFF134668)),
+                        ),
+                      ),
+                    ),
+                    20.heightBox,
+                  ],
                 ),
               ),
               const SizedBox(height: 20),
@@ -302,10 +329,10 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                 children: [
                   SizedBox(
                     height: 70,
-                    width: context.screenWidth * .4,
+                    width: context.screenWidth * .5,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.purpleAccent),
+                          backgroundColor: Colors.greenAccent),
                       onPressed: () async {
                         const Center(child: CircularProgressIndicator());
                         try {
@@ -353,7 +380,8 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                       },
                       child: const Text(
                         'Add Question',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.w700),
                       ),
                     ),
                   ),
