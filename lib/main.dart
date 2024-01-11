@@ -2,7 +2,7 @@ import 'package:edgefly_academy_admin/firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'app/auth_screen/view/login_page.dart';
+import 'app/auth/view/signin_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'app/home_screen/home_screen.dart';
 import 'app/settings/view/setting_view.dart';
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
       getPages: [
         GetPage(
             name: '/',
-            page: () => isLogin ? const HomeScreen() : const LoginPage()),
+            page: () => isLogin ? const HomeScreen() : const SigninScreen()),
         GetPage(name: '/settings', page: () => const SettingScreen()),
       ],
       title: 'Edge fly Academy',
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: isLogin ? const HomeScreen() : const LoginPage(),
+      home: isLogin ? const HomeScreen() : const SigninScreen(),
     );
   }
 }

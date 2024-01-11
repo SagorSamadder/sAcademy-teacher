@@ -1,4 +1,4 @@
-import 'package:edgefly_academy_admin/app/auth_screen/view/login_page.dart';
+import 'package:edgefly_academy_admin/app/auth/view/signin_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -58,7 +58,7 @@ class SettingScreen extends StatelessWidget {
             InkWell(
               onTap: () async {
                 await FirebaseAuth.instance.signOut();
-                Get.offAll(() => const LoginPage());
+                Get.offAll(() => const SigninScreen());
               },
               child: Container(
                 height: 70,
