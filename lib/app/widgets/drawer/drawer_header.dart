@@ -57,7 +57,7 @@ class DrawerHeaders extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                             ),
                             Text(
-                              "${data['name']}",
+                              "${data['phone']}",
                               style: const TextStyle(fontSize: 14),
                               overflow: TextOverflow.ellipsis,
                             ),
