@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +19,7 @@ class AddQuestionController extends GetxController {
   late String selectedField2 = ""; // Value for the second dropdown
   late String selectedField3 = ""; // Value for the third dropdown
 
+  String uid = FirebaseAuth.instance.currentUser!.uid;
   List<String> field1Items = [
     'SSC',
     'HSC',
@@ -62,11 +64,9 @@ class AddQuestionController extends GetxController {
       };
 
       await FirebaseFirestore.instance
-          .collection('question')
-          .doc(selectedField1)
-          .collection(selectedField2)
-          .doc(selectedField3)
-          .collection(selectedField3)
+          .collection('questionsetter')
+          .doc(uid)
+          .collection("question")
           .doc()
           .set(questionmap)
           .then((value) {

@@ -35,7 +35,7 @@ class SignupController extends GetxController {
             'name': namecontroller.text,
             'password': passcontroller.text,
             'email': emailcontroller.text,
-            'amount': "0",
+            'account': "0",
             'imageUrl': "",
             'phone': phonecontroller.text,
           });
@@ -60,17 +60,6 @@ class SignupController extends GetxController {
         log("$e");
       }
     }
-  }
-
-  storeUserData(
-      String uid, String fullname, String email, String password) async {
-    var store = FirebaseFirestore.instance.collection('users').doc(uid);
-    await store.set({
-      'uid': uid,
-      'fullname': fullname,
-      'password': email,
-      'email': password,
-    });
   }
 
   signout() async {
