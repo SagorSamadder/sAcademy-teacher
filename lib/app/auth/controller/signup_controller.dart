@@ -108,11 +108,11 @@ class SignupController extends GetxController {
   //validate name
   String? validname(value) {
     if (value!.isEmpty) {
-      return 'please enter a password';
+      return 'please enter your name';
     }
     RegExp emailRefExp = RegExp(r'^.{5,}$');
     if (!emailRefExp.hasMatch(value)) {
-      return 'Password enter a valid name';
+      return 'Password enter your full name';
     }
     return null;
   }

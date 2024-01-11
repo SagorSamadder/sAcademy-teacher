@@ -90,4 +90,22 @@ class AddQuestionController extends GetxController {
       log('Error is : $e');
     }
   }
+
+  String? validfield(value) {
+    if (value!.isEmpty) {
+      return 'please fil this document';
+    }
+    RegExp emailRefExp = RegExp(r'^.{1,}$');
+    if (!emailRefExp.hasMatch(value)) {
+      return 'please fil this document';
+    }
+    return null;
+  }
+
+  String? validDropdownbutton(values) {
+    if (values == null || values.isEmpty) {
+      return 'Please select an option';
+    }
+    return null;
+  }
 }

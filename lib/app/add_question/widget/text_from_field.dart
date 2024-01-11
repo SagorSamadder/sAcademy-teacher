@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 class QTextFromField extends StatelessWidget {
   var controller;
   final lebels;
-  QTextFromField({super.key, this.controller, required this.lebels});
+  var validator;
+  QTextFromField(
+      {super.key, this.controller, required this.lebels, this.validator});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,7 @@ class QTextFromField extends StatelessWidget {
         filled: true,
         fillColor: Colors.white,
         labelText: lebels,
+        hintText: lebels,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
           borderSide: const BorderSide(width: 2.0, color: Colors.grey),
@@ -30,6 +33,8 @@ class QTextFromField extends StatelessWidget {
           borderSide: const BorderSide(width: 2.0, color: Color(0xFF134668)),
         ),
       ),
+      validator: validator,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
     );
   }
 }
