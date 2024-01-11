@@ -6,6 +6,7 @@ Widget coustomtextfield({
   String? hint,
   controller,
   isPass,
+  validator,
 }) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,6 +27,8 @@ Widget coustomtextfield({
           focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Color(0xFF134668))),
         ),
+        validator: validator,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
       ),
       8.heightBox
     ],

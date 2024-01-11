@@ -48,7 +48,9 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => const HomeScreen()),
+        GetPage(
+            name: '/',
+            page: () => isLogin ? const HomeScreen() : const LoginPage()),
         GetPage(name: '/settings', page: () => const SettingScreen()),
       ],
       title: 'Edge fly Academy',

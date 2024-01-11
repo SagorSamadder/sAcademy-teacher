@@ -7,4 +7,4 @@ User? currentUser = auth.currentUser;
 
 //collection
 
-const adminController = "admins";
+const questionSetter = "qadmin";
