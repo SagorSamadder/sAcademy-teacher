@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../add_question/view/add_question.dart';
-import '../widgets/drawer.dart';
+import '../widgets/drawer/drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

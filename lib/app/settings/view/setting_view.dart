@@ -1,10 +1,6 @@
-import 'package:edgefly_academy_admin/app/auth/view/signin_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
-
-import '../../widgets/drawer.dart';
+import '../../widgets/drawer/drawer.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -17,8 +13,6 @@ class SettingScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             50.heightBox,
             Container(
@@ -42,39 +36,17 @@ class SettingScreen extends StatelessWidget {
               height: 70,
               width: context.screenWidth * .70,
               decoration: BoxDecoration(
-                color: Colors.grey,
+                color: const Color.fromARGB(255, 140, 236, 190),
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: const [
                   BoxShadow(
+                    color: Color.fromARGB(255, 140, 236, 190),
                     blurRadius: 3.0,
                   ),
                 ],
               ),
               child: const Center(
                 child: Text("Terms & Condition"),
-              ),
-            ),
-            const Spacer(),
-            InkWell(
-              onTap: () async {
-                await FirebaseAuth.instance.signOut();
-                Get.offAll(() => const SigninScreen());
-              },
-              child: Container(
-                height: 70,
-                width: context.screenWidth * .70,
-                decoration: BoxDecoration(
-                  color: Colors.redAccent,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 3.0,
-                    ),
-                  ],
-                ),
-                child: const Center(
-                  child: Text("Log out"),
-                ),
               ),
             ),
             50.heightBox,
