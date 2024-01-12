@@ -22,7 +22,7 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.home),
-            title: const Text('Home'),
+            title: const Text('Dashboard'),
             onTap: () {
               Get.to(() => const HomeScreen());
             },
