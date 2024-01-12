@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final QuestionController questionController = Get.put(QuestionController());
     return Scaffold(
+      backgroundColor: const Color(0xffdce5fd),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 204, 217, 253),
         elevation: 1,
