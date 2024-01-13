@@ -32,27 +32,30 @@ class Sscontainner extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                title,
-                style: const TextStyle(color: Colors.white, fontSize: 16),
+              Row(
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  10.widthBox,
+                  Icon(
+                    icon,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+                ],
               ),
-              5.heightBox,
               Text(
                 count,
                 style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 22,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
-          10.widthBox,
-          Icon(
-            icon,
-            color: Colors.white,
-            size: 30,
-          )
         ],
       ),
     );

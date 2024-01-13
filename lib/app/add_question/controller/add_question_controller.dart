@@ -62,6 +62,7 @@ class AddQuestionController extends GetxController {
         'option4': optioncontroller4.text,
         'answer': correctAnswerController.text,
         'accept': 'pending',
+        'qsUid':uid,
       };
 
       await FirebaseFirestore.instance
