@@ -1,3 +1,4 @@
+import 'package:edgefly_academy_admin/app/home_screen/controller/question_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -12,6 +13,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final QuestionCountController questionCountController =
+        Get.put(QuestionCountController());
     final QuestionController questionController = Get.put(QuestionController());
     return Scaffold(
       backgroundColor: const Color(0xffdce5fd),
@@ -32,12 +35,12 @@ class HomeScreen extends StatelessWidget {
                 Sscontainner(
                   icon: Icons.post_add_outlined,
                   title: 'Total submitted',
-                  count: '${questionController.totalDocuments}',
+                  count: '${questionCountController.totalDocuments}',
                 ),
                 Sscontainner(
                   icon: Icons.file_download_done_outlined,
                   title: 'Total Accepted',
-                  count: '${questionController.acceptedCount}',
+                  count: '${questionCountController.acceptedCount}',
                 ),
               ],
             ),
@@ -52,12 +55,12 @@ class HomeScreen extends StatelessWidget {
                 Sscontainner(
                   icon: Icons.pending_actions_outlined,
                   title: 'Total pending',
-                  count: '${questionController.pendingCount}',
+                  count: '${questionCountController.pendingCount}',
                 ),
                 Sscontainner(
                   icon: Icons.cancel,
                   title: 'Total rejected',
-                  count: '${questionController.rejectedCount}',
+                  count: '${questionCountController.rejectedCount}',
                 ),
               ],
             ),
@@ -70,15 +73,42 @@ class HomeScreen extends StatelessWidget {
               child: "All Question".text.size(20).bold.make(),
             ),
           ),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text('title${index + 1}'),
-              );
-            },
+          Obx(
+            () => questionController.questionList.isEmpty
+                ? Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        60.heightBox,
+                        Text(
+                          "You Don't submit any Question",
+                          style: TextStyle(
+                              fontSize: context.screenWidth * .06,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Image.asset(
+                          'assets/images/empty.png',
+                          width: context.screenWidth * .7,
+                        )
+                      ],
+                    ),
+                  )
+                : ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: questionController.questionList.length,
+                    itemBuilder: (context, index) {
+                      var questionData =
+                          questionController.questionList[index].data();
+                      return Container(
+                        decoration: BoxDecoration(),
+                        child: ListTile(
+                          title:
+                              Text(questionData['question'] ?? "No question"),
+                        ),
+                      );
+                    },
+                  ),
           ),
         ],
       ),

@@ -231,10 +231,17 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                                 msg: "fill all the documents first");
                           }
                         },
-                        child: const Text(
-                          'Add Question',
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.w700),
+                        child: Obx(
+                          () => controller.isloading.value
+                              ? const Center(
+                                  child: CircularProgressIndicator(),
+                                )
+                              : const Text(
+                                  'Add Question',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w700),
+                                ),
                         ),
                       ),
                     ),

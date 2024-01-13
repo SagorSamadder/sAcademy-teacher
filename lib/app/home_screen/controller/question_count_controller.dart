@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class QuestionController extends GetxController {
+class QuestionCountController extends GetxController {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   var uid = FirebaseAuth.instance.currentUser!.uid;
 

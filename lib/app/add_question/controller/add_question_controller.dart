@@ -20,6 +20,7 @@ class AddQuestionController extends GetxController {
   late String selectedField3 = ""; // Value for the third dropdown
 
   String uid = FirebaseAuth.instance.currentUser!.uid;
+  var isloading = false.obs;
   List<String> field1Items = [
     'SSC',
     'HSC',
@@ -51,6 +52,7 @@ class AddQuestionController extends GetxController {
 
   uploadQuestion(context) async {
     try {
+      isloading(true);
       Map<String, dynamic> questionmap = {
         'category': selectedField1.toString(),
         'subject': selectedField2.toString(),
@@ -62,7 +64,7 @@ class AddQuestionController extends GetxController {
         'option4': optioncontroller4.text,
         'answer': correctAnswerController.text,
         'accept': 'pending',
-        'qsUid':uid,
+        'qsUid': uid,
       };
 
       await FirebaseFirestore.instance
@@ -88,8 +90,10 @@ class AddQuestionController extends GetxController {
       });
 
       log('data uploaded');
+      isloading(false);
     } catch (e) {
       log('Error is : $e');
+      isloading(false);
     }
   }
 
