@@ -157,7 +157,7 @@ class HomeScreen extends StatelessWidget {
                               Text(
                                 "${questionData['status']}",
                                 style: TextStyle(
-                                  color: questionData['status'] == 'accept'
+                                  color: questionData['status'] == 'accepted'
                                       ? const Color.fromARGB(255, 6, 120, 219)
                                       : (questionData['status'] == 'pending'
                                           ? Colors.black

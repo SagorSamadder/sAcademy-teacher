@@ -28,7 +28,7 @@ class QuestionCountController extends GetxController {
       rejectedCount.value = 0;
 
       for (QueryDocumentSnapshot doc in querySnapshot.docs) {
-        var acceptValue = doc['accept'];
+        var acceptValue = doc['status'];
         if (acceptValue == 'pending') {
           pendingCount++;
         } else if (acceptValue == 'accepted') {
