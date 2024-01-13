@@ -63,7 +63,7 @@ class AddQuestionController extends GetxController {
         'option3': optioncontroller3.text,
         'option4': optioncontroller4.text,
         'answer': correctAnswerController.text,
-        'accept': 'pending',
+        'status': 'pending',
         'qsUid': uid,
       };
 

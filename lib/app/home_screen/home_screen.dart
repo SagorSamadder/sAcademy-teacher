@@ -73,6 +73,7 @@ class HomeScreen extends StatelessWidget {
               child: "All Question".text.size(20).bold.make(),
             ),
           ),
+          10.heightBox,
           Obx(
             () => questionController.questionList.isEmpty
                 ? Center(
@@ -101,10 +102,78 @@ class HomeScreen extends StatelessWidget {
                       var questionData =
                           questionController.questionList[index].data();
                       return Container(
-                        decoration: BoxDecoration(),
+                        padding: const EdgeInsets.all(8),
+                        margin: EdgeInsets.only(
+                            left: context.screenWidth * .05,
+                            right: context.screenWidth * .05,
+                            bottom: context.screenWidth * .04),
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 167, 187, 241),
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 175, 196, 253),
+                                blurRadius: 2,
+                                offset: Offset(2, 2),
+                              )
+                            ]),
                         child: ListTile(
-                          title:
-                              Text(questionData['question'] ?? "No question"),
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Question: ",
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: context.screenWidth * .012,
+                                    ),
+                                    Text(
+                                      "${questionData['question']}",
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: const TextStyle(fontSize: 14),
+                                    ),
+                                    10.heightBox
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          subtitle: Row(
+                            children: [
+                              const Text(
+                                "Status:  ",
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "${questionData['status']}",
+                                style: TextStyle(
+                                  color: questionData['status'] == 'accept'
+                                      ? const Color.fromARGB(255, 6, 120, 219)
+                                      : (questionData['status'] == 'pending'
+                                          ? Colors.black
+                                          : Colors.red),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                          // trailing: const Expanded(
+                          //   child: Icon(
+                          //     Icons.arrow_circle_right,
+                          //     size: 40,
+                          //   ),
+                          // ),
                         ),
                       );
                     },
