@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'app/auth/view/signin_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'app/home_screen/home_screen.dart';
+import 'app/home_screen/view/home_screen.dart';
 import 'app/settings/view/setting_view.dart';
 
 void main() async {

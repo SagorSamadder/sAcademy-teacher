@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import '../add_question/view/add_question.dart';
-import '../widgets/drawer/drawer.dart';
-import 'controller/question_count_controller.dart';
-import 'widged/containet.dart';
+import '../../add_question/view/add_question.dart';
+import '../../widgets/drawer/drawer.dart';
+import '../controller/question_count_controller.dart';
+import '../widged/containet.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -118,6 +118,7 @@ class HomeScreen extends StatelessWidget {
                               )
                             ]),
                         child: ListTile(
+                          onTap: () {},
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,

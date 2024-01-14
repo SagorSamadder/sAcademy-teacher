@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../home_screen/home_screen.dart';
+import '../../home_screen/view/home_screen.dart';
 
 showDialogs(
   BuildContext context,
