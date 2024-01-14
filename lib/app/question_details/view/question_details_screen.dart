@@ -14,7 +14,10 @@ class QuestionDetailsScreen extends StatelessWidget {
         title: const Text('Question details'),
       ),
       body: Column(
-        children: [Text("${data['question']}")],
+        children: [
+          Text("${data['question']}"),
+          Text("${data['option 1']}"),
+        ],
       ),
     );
   }
