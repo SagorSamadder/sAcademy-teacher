@@ -20,6 +20,11 @@ class AddQuestionController extends GetxController {
   late String selectedField3 = ""; // Value for the third dropdown
 
   String uid = FirebaseAuth.instance.currentUser!.uid;
+  String generateTimestamp() {
+    DateTime currentTime = DateTime.now();
+    return currentTime.toUtc().toIso8601String();
+  }
+
   var isloading = false.obs;
   List<String> field1Items = [
     'SSC',
@@ -53,6 +58,7 @@ class AddQuestionController extends GetxController {
   uploadQuestion(context) async {
     try {
       isloading(true);
+      String timestamp = generateTimestamp();
       Map<String, dynamic> questionmap = {
         'category': selectedField1.toString(),
         'subject': selectedField2.toString(),
@@ -65,13 +71,14 @@ class AddQuestionController extends GetxController {
         'answer': correctAnswerController.text,
         'status': 'pending',
         'qsUid': uid,
+        'timestamp': timestamp,
       };
 
       await FirebaseFirestore.instance
           .collection('questionsetter')
           .doc(uid)
           .collection("question")
-          .doc()
+          .doc(timestamp)
           .set(questionmap)
           .then((value) {
         questionController.clear();
