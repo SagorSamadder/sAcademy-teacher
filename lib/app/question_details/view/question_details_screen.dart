@@ -66,7 +66,7 @@ class QuestionDetailsScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Text("Option: ${data['option3']}"),
+                    child: Text("Option 3: ${data['option3']}"),
                   ),
                   10.heightBox,
                   Container(
@@ -90,15 +90,27 @@ class QuestionDetailsScreen extends StatelessWidget {
                   ),
                   20.heightBox,
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
-                          width: context.screenWidth * .4,
-                          child: ElevatedButton(
-                              onPressed: () {}, child: Text("Edit"))),
+                        width: context.screenWidth * .4,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text("Edit"),
+                        ),
+                      ),
                       SizedBox(
-                          width: context.screenWidth * .4,
-                          child: ElevatedButton(
-                              onPressed: () {}, child: Text("Delete"))),
+                        width: context.screenWidth * .4,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red),
+                          onPressed: () {},
+                          child: const Text(
+                            "Delete",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
                     ],
                   )
                 ],
