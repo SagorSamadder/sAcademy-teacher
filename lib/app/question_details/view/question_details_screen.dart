@@ -36,7 +36,22 @@ class QuestionDetailsScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Text("Question: ${data['question']}"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Question: ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "${data['question']}",
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   10.heightBox,
                   Container(
@@ -46,7 +61,22 @@ class QuestionDetailsScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Text("Option 1: ${data['optiono1']}"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Option 1: ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "${data['option1']}",
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   10.heightBox,
                   Container(
@@ -56,7 +86,22 @@ class QuestionDetailsScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Text("Option 2: ${data['option2']}"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Option 2: ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "${data['option2']}",
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   10.heightBox,
                   Container(
@@ -66,7 +111,22 @@ class QuestionDetailsScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Text("Option 3: ${data['option3']}"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Option 3: ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "${data['option3']}",
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   10.heightBox,
                   Container(
@@ -76,7 +136,22 @@ class QuestionDetailsScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Text("Option 4: ${data['option4']}"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Option 4: ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "${data['option4']}",
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   10.heightBox,
                   Container(
@@ -86,7 +161,22 @@ class QuestionDetailsScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Text("Correct Answer: ${data['answer']}"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Correct answer: ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        Expanded(
+                          child: Text(
+                            "${data['answer']}",
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   20.heightBox,
                   Row(
