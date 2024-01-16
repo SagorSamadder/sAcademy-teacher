@@ -54,7 +54,6 @@ void showConfirmationDialog(BuildContext context, String documentId) {
               onPressed: () {
                 deleteDocument(documentId);
                 Navigator.of(context).pop();
-                log('Confirmed');
                 Get.back();
               },
               child: const Text(
