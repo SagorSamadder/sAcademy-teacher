@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 Future<void> deleteDocument(String documentId) async {
@@ -20,7 +21,7 @@ Future<void> deleteDocument(String documentId) async {
   }
 }
 
-void showConfirmationDialog(BuildContext context) {
+void showConfirmationDialog(BuildContext context, String documentId) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -51,8 +52,10 @@ void showConfirmationDialog(BuildContext context) {
             ),
             child: TextButton(
               onPressed: () {
+                deleteDocument(documentId);
                 Navigator.of(context).pop();
                 log('Confirmed');
+                Get.back();
               },
               child: const Text(
                 'Confirm',

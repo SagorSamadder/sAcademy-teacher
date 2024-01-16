@@ -205,7 +205,8 @@ class QuestionDetailsScreen extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.red),
                             onPressed: () async {
-                              showConfirmationDialog(context);
+                              showConfirmationDialog(
+                                  context, data['timestamp']);
                             },
                             child: const Text(
                               "Delete",
