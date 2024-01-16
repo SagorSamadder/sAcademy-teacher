@@ -1,4 +1,6 @@
+import 'package:edgefly_academy_admin/app/question_details_edit/view/question_details_edit_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class QuestionDetailsScreen extends StatelessWidget {
@@ -185,7 +187,9 @@ class QuestionDetailsScreen extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * .4,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(() => const QuestionDetailsEdit());
+                          },
                           child: const Text("Edit"),
                         ),
                       ),
