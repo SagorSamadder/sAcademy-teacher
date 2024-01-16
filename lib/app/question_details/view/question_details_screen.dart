@@ -1,3 +1,4 @@
+import 'package:edgefly_academy_admin/app/question_details/services/delete_question.dart';
 import 'package:edgefly_academy_admin/app/question_details_edit/view/question_details_edit_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -203,7 +204,9 @@ class QuestionDetailsScreen extends StatelessWidget {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.red),
-                            onPressed: () {},
+                            onPressed: () async {
+                              showConfirmationDialog(context);
+                            },
                             child: const Text(
                               "Delete",
                               style: TextStyle(color: Colors.white),
