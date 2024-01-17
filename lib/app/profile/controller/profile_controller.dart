@@ -16,6 +16,7 @@ class ProfileController extends GetxController {
   var profileImagepath = ''.obs;
   var profileImageLink = '';
   var isloading = false.obs;
+  var isloadings = false.obs;
 
   //text field
   var nameController = TextEditingController();
@@ -49,6 +50,7 @@ class ProfileController extends GetxController {
     await store.set({'name': name, 'password': password, 'imageUrl': imgUrl},
         SetOptions(merge: true));
     isloading(false);
+    isloadings(false);
   }
 
   //pasword change controller
