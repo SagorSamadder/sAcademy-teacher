@@ -234,13 +234,16 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                         child: Obx(
                           () => controller.isloading.value
                               ? const Center(
-                                  child: CircularProgressIndicator(),
+                                  child: CircularProgressIndicator(
+                                    color: Colors.white,
+                                  ),
                                 )
                               : const Text(
                                   'Add Question',
                                   style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w700),
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
                         ),
                       ),

@@ -112,7 +112,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       },
                       child: controller.isLoading.value
                           ? const Center(
-                              child: CircularProgressIndicator(),
+                              child: CircularProgressIndicator(
+                                color: Colors.white,
+                              ),
                             )
                           : "Registration".text.white.make(),
                     ),

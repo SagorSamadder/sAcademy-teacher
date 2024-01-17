@@ -85,7 +85,9 @@ class _SigninScreenState extends State<SigninScreen> {
                       },
                       child: controller.isLoading.value
                           ? const Center(
-                              child: CircularProgressIndicator(),
+                              child: CircularProgressIndicator(
+                                color: Colors.white,
+                              ),
                             )
                           : "Login".text.white.make(),
                     ),
