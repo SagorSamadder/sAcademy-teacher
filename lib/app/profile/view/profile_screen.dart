@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:edgefly_academy_admin/app/profile/controller/profile_controller.dart';
+import 'package:edgefly_academy_admin/app/profile/view/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -101,8 +102,9 @@ class ProfileScreen extends StatelessWidget {
                                         color: Colors.white,
                                       )),
                                   onPressed: () {
-                                    // controller.nameController.text = data['name'];
-                                    // Get.to(() => EditProfilescreen(data: data));
+                                    controller.nameController.text =
+                                        data['name'];
+                                    Get.to(() => EditProfilescreen(data: data));
                                   },
                                   child: const Icon(Icons.edit),
                                 ),
