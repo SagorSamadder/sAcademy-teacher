@@ -34,11 +34,13 @@ class DrawerHeaders extends StatelessWidget {
                           ? Image.asset(
                               "assets/images/user.png",
                               width: 100,
+                              height: 100,
                               fit: BoxFit.cover,
                             ).box.roundedFull.clip(Clip.antiAlias).make()
                           : Image.network(
                               data['imageUrl'],
                               width: 100,
+                              height: 100,
                               fit: BoxFit.cover,
                             ).box.roundedFull.clip(Clip.antiAlias).make(),
                       15.widthBox,
