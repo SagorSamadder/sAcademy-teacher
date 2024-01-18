@@ -1,3 +1,4 @@
+import 'package:edgefly_academy_admin/app/wallet/view/wallet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,6 +33,13 @@ class MyDrawer extends StatelessWidget {
             title: const Text('Profile'),
             onTap: () {
               Get.to(() => const ProfileScreen());
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.wallet),
+            title: const Text('Wallet'),
+            onTap: () {
+              Get.to(() => const WalletScreen());
             },
           ),
           ListTile(
