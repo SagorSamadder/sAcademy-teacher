@@ -25,21 +25,21 @@ class MyDrawer extends StatelessWidget {
             leading: const Icon(Icons.home),
             title: const Text('Dashboard'),
             onTap: () {
-              Get.to(() => const HomeScreen());
+              Get.offAll(() => const HomeScreen());
             },
           ),
           ListTile(
             leading: const Icon(Icons.person),
             title: const Text('Profile'),
             onTap: () {
-              Get.to(() => const ProfileScreen());
+              Get.offAll(() => const ProfileScreen());
             },
           ),
           ListTile(
             leading: const Icon(Icons.wallet),
             title: const Text('Wallet'),
             onTap: () {
-              Get.to(() => const WalletScreen());
+              Get.offAll(() => const WalletScreen());
             },
           ),
           ListTile(
@@ -56,7 +56,7 @@ class MyDrawer extends StatelessWidget {
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () {
-              Get.to(() => const SettingScreen());
+              Get.offAll(() => const SettingScreen());
             },
           ),
         ],

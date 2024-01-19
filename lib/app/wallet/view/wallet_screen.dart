@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../../withdraw/view/withdraw_screen.dart';
 import '../controller/wallet_controller.dart';
 
 class WalletScreen extends StatelessWidget {
@@ -64,7 +65,7 @@ class WalletScreen extends StatelessWidget {
                   ),
                   SizedBox(
                     height: context.screenHeight * .15,
-                  )
+                  ),
                 ],
               ),
             ),
@@ -94,7 +95,9 @@ class WalletScreen extends StatelessWidget {
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xff3777c8)),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => const WithdrawScreen());
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
