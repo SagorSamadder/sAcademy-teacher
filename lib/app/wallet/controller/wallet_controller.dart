@@ -1,28 +1,44 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class WalletController extends GetxController {
-  RxInt accountBalance = 0.obs;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  var uid = FirebaseAuth.instance.currentUser!.uid;
 
-  Future<void> updateWallet(String userId) async {
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
-    DocumentReference userRef = firestore.collection('users').doc(userId);
+  RxInt totalDocuments = 0.obs;
+  RxInt acceptedCount = 0.obs;
+  RxInt totalAccount = 0.obs;
 
-    DocumentSnapshot userSnapshot = await userRef.get();
+  CollectionReference get questionCollection =>
+      _firestore.collection('/questionsetter/$uid/question');
 
-    if (userSnapshot.exists) {
-      bool status = userSnapshot['status'];
+  @override
+  void onInit() {
+    super.onInit();
+    subscribeToUpdates();
+  }
 
-      if (status) {
-        int currentBalance = userSnapshot['account'] ?? 0;
-        int newBalance = currentBalance * 2;
+  void subscribeToUpdates() async {
+    questionCollection.snapshots().listen((QuerySnapshot querySnapshot) async {
+      totalDocuments.value = querySnapshot.docs.length;
+      acceptedCount.value = 0;
 
-        // Update the account balance in the controller
-        accountBalance.value = newBalance;
-
-        // Update the Firestore document
-        await userRef.update({'account': newBalance});
+      for (QueryDocumentSnapshot doc in querySnapshot.docs) {
+        var acceptValue = doc['status'];
+        if (acceptValue == 'accepted') {
+          acceptedCount++;
+        }
       }
-    }
+
+      // Calculate total account after processing all documents
+      totalAccount.value = acceptedCount.value * 2;
+      print("total account: $totalAccount");
+
+      // Update the Firestore document with the latest total account value
+      await _firestore.collection('questionsetter').doc(uid).update({
+        'account': totalAccount.value,
+      });
+    });
   }
 }

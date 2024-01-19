@@ -1,12 +1,16 @@
 import 'package:edgefly_academy_admin/app/widgets/drawer/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+import '../controller/wallet_controller.dart';
 
 class WalletScreen extends StatelessWidget {
   const WalletScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    WalletController controller = Get.put(WalletController());
     return Scaffold(
       drawer: const MyDrawer(),
       appBar: AppBar(
@@ -43,13 +47,20 @@ class WalletScreen extends StatelessWidget {
                       "Available balance".text.white.size(20).make(),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      "\$".text.white.size(70).make(),
-                      10.widthBox,
-                      "150.00".text.white.size(70).make(),
-                    ],
+                  Obx(
+                    () => Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        "\$".text.white.size(70).make(),
+                        10.widthBox,
+                        "${controller.totalAccount}"
+                            .numCurrency
+                            .text
+                            .white
+                            .size(70)
+                            .make(),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: context.screenHeight * .15,
