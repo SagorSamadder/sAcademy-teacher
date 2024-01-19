@@ -62,7 +62,7 @@ class WalletScreen extends StatelessWidget {
             left: context.screenWidth * .1,
             top: 200,
             child: Container(
-              height: 250,
+              height: context.screenHeight * .35,
               width: context.screenWidth * .79,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -79,52 +79,52 @@ class WalletScreen extends StatelessWidget {
                 children: [
                   SizedBox(
                     height: context.screenHeight * .07,
-                    width: context.screenWidth * .5,
+                    width: context.screenWidth * .55,
                     child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff3777c8)),
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(
-                              Icons.outbox,
-                              color: Colors.white,
-                            ),
-                            5.widthBox,
-                            const Text(
-                              "withdraw",
-                              style:
-                                  TextStyle(fontSize: 20, color: Colors.white),
-                            ),
-                          ],
-                        )),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xff3777c8)),
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.outbox,
+                            color: Colors.white,
+                          ),
+                          5.widthBox,
+                          const Text(
+                            "withdraw",
+                            style: TextStyle(fontSize: 20, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: context.screenHeight * .03,
                   ),
                   SizedBox(
                     height: context.screenHeight * .07,
-                    width: context.screenWidth * .5,
+                    width: context.screenWidth * .55,
                     child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff3777c8)),
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(
-                              Icons.notes_rounded,
-                              color: Colors.white,
-                            ),
-                            5.widthBox,
-                            const Text(
-                              "Transaction",
-                              style:
-                                  TextStyle(fontSize: 20, color: Colors.white),
-                            ),
-                          ],
-                        )),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xff3777c8)),
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.notes_rounded,
+                            color: Colors.white,
+                          ),
+                          5.widthBox,
+                          const Text(
+                            "Transactions",
+                            style: TextStyle(fontSize: 20, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
