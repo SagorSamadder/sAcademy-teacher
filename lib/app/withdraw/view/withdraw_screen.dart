@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../../home_screen/view/home_screen.dart';
 import '../controller/withdraw_controller.dart';
 
 class WithdrawScreen extends StatelessWidget {
@@ -169,7 +170,7 @@ class WithdrawScreen extends StatelessWidget {
                                   width: 2.0, color: Color(0xFF134668)),
                             ),
                           ),
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: controller.validname,
                         ),
                         20.heightBox,
                         SizedBox(
@@ -179,19 +180,71 @@ class WithdrawScreen extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xff3777c8)),
                             onPressed: () async {
+                              //check user fill all documents
                               if (formkey.currentState!.validate()) {
+                                //user account balance check
                                 if (double.parse(data['account'].toString()) >=
                                     double.parse(
                                         controller.amountController.text)) {
+                                  //passord checking
+                                  if (data['password'] ==
+                                      controller.passController.text) {
+                                    await controller.proceedWithdraw(context);
+                                    Get.offAll(() => const HomeScreen());
+                                  } else {
+                                    Get.showSnackbar(const GetSnackBar(
+                                      title: "wrong password",
+                                      message: "You entered a wrong password",
+                                      snackPosition: SnackPosition.TOP,
+                                      duration: Duration(seconds: 4),
+                                      borderRadius: 20,
+                                      backgroundColor:
+                                          Color.fromARGB(255, 129, 129, 129),
+                                      margin: EdgeInsets.all(10),
+                                      boxShadows: [
+                                        BoxShadow(
+                                          color: Colors.grey,
+                                          blurRadius: 3,
+                                        )
+                                      ],
+                                    ));
+                                  }
                                 } else {
-                                  VxToast.show(context,
-                                      msg: "Insufficient balance");
+                                  Get.showSnackbar(const GetSnackBar(
+                                    title: "Insufficient balance !",
+                                    message: "You don't have enough balance",
+                                    snackPosition: SnackPosition.TOP,
+                                    duration: Duration(seconds: 4),
+                                    borderRadius: 20,
+                                    backgroundColor:
+                                        Color.fromARGB(255, 129, 129, 129),
+                                    margin: EdgeInsets.all(10),
+                                    boxShadows: [
+                                      BoxShadow(
+                                        color: Colors.grey,
+                                        blurRadius: 3,
+                                      )
+                                    ],
+                                  ));
                                 }
-                                // await controller.proceedWithdraw(context);
-                                // Get.offAll(const HomeScreen());
                               } else {
-                                VxToast.show(context,
-                                    msg: "fill the documents");
+                                Get.showSnackbar(const GetSnackBar(
+                                  title: "Fill all documents",
+                                  message:
+                                      "fill all documents with valied data",
+                                  snackPosition: SnackPosition.TOP,
+                                  duration: Duration(seconds: 4),
+                                  borderRadius: 20,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 129, 129, 129),
+                                  margin: EdgeInsets.all(10),
+                                  boxShadows: [
+                                    BoxShadow(
+                                      color: Colors.grey,
+                                      blurRadius: 3,
+                                    )
+                                  ],
+                                ));
                               }
                             },
                             child: Row(
@@ -202,11 +255,17 @@ class WithdrawScreen extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                                 5.widthBox,
-                                const Text(
-                                  "Proceed",
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.white),
-                                ),
+                                controller.isloading.value
+                                    ? const Center(
+                                        child: CircularProgressIndicator(
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    : const Text(
+                                        "Proceed",
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.white),
+                                      ),
                               ],
                             ),
                           ),

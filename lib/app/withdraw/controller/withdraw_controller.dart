@@ -47,7 +47,7 @@ class WithdrawController extends GetxController {
         );
       });
 
-      log('data uploaded');
+      log('Request Sucessfull');
       isloading(false);
     } catch (e) {
       log('Error is : $e');
