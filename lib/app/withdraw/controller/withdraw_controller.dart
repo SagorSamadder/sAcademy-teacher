@@ -42,7 +42,7 @@ class WithdrawController extends GetxController {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Request Sucessfull'),
-            duration: Duration(seconds: 3), // Adjust as needed
+            duration: Duration(seconds: 3),
           ),
         );
       });
@@ -66,9 +66,13 @@ class WithdrawController extends GetxController {
     return null;
   }
 
-  String? validDropdownbutton(values) {
-    if (values == null || values.isEmpty) {
-      return 'Please select an option';
+  String? validname(value) {
+    if (value!.isEmpty) {
+      return 'please enter data';
+    }
+    RegExp emailRefExp = RegExp(r'^.{2,}$');
+    if (!emailRefExp.hasMatch(value)) {
+      return 'Password enter a valid data';
     }
     return null;
   }
