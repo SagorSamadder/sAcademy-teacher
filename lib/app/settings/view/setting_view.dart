@@ -1,4 +1,8 @@
+import 'package:edgefly_academy_admin/app/auth/view/signin_screen.dart';
+import 'package:edgefly_academy_admin/app/home_screen/view/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../../widgets/drawer/drawer.dart';
 
@@ -47,6 +51,33 @@ class SettingScreen extends StatelessWidget {
               ),
               child: const Center(
                 child: Text("Terms & Condition"),
+              ),
+            ),
+            const Spacer(),
+            SizedBox(
+              height: 50,
+              width: 200,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xff3777c8)),
+                onPressed: () async {
+                  await FirebaseAuth.instance.signOut();
+                  Get.offAll(() => const SigninScreen());
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.logout,
+                      color: Colors.white,
+                    ),
+                    10.widthBox,
+                    const Text(
+                      "Log out",
+                      style: TextStyle(color: Colors.white),
+                    )
+                  ],
+                ),
               ),
             ),
             50.heightBox,
