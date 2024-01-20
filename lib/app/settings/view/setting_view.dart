@@ -1,5 +1,4 @@
 import 'package:edgefly_academy_admin/app/auth/view/signin_screen.dart';
-import 'package:edgefly_academy_admin/app/home_screen/view/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
