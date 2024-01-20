@@ -55,24 +55,13 @@ class WithdrawController extends GetxController {
     }
   }
 
-  String? validfield(value) {
-    if (value!.isEmpty) {
-      return 'please fil this document';
-    }
-    RegExp emailRefExp = RegExp(r'^.{1,}$');
-    if (!emailRefExp.hasMatch(value)) {
-      return 'please fil this document';
-    }
-    return null;
-  }
-
   String? validname(value) {
     if (value!.isEmpty) {
-      return 'please enter data';
+      return 'please fil this';
     }
     RegExp emailRefExp = RegExp(r'^.{2,}$');
     if (!emailRefExp.hasMatch(value)) {
-      return 'Password enter a valid data';
+      return 'enter a valid data';
     }
     return null;
   }
