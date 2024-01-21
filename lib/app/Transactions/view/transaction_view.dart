@@ -12,8 +12,11 @@ class TransactionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TransactionController controller = Get.put(TransactionController());
     return Scaffold(
+      backgroundColor: const Color(0xff4db6e7),
       appBar: AppBar(
-        title: const Text("All Transactions"),
+        backgroundColor: const Color.fromARGB(255, 60, 160, 206),
+        elevation: 2,
+        title: "All transaction".text.white.bold.make(),
       ),
       body: NotificationListener(
         onNotification: (ScrollNotification scrollInfo) {
@@ -33,7 +36,8 @@ class TransactionScreen extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Padding(
                 padding: EdgeInsets.only(left: context.screenWidth * .05),
-                child: "All transaction".text.size(20).bold.make(),
+                child:
+                    "All transaction history".text.white.size(20).bold.make(),
               ),
             ),
             10.heightBox,
@@ -74,15 +78,16 @@ class TransactionScreen extends StatelessWidget {
                               right: context.screenWidth * .05,
                               bottom: context.screenWidth * .04),
                           decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 167, 187, 241),
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Color.fromARGB(255, 175, 196, 253),
-                                  blurRadius: 2,
-                                  offset: Offset(2, 2),
-                                )
-                              ]),
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 2,
+                                offset: Offset(2, 2),
+                              )
+                            ],
+                          ),
                           child: ListTile(
                             onTap: () {},
                             subtitle: Row(
