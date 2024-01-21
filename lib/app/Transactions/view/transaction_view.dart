@@ -31,16 +31,7 @@ class TransactionScreen extends StatelessWidget {
         child: ListView(
           physics: const BouncingScrollPhysics(),
           children: [
-            15.heightBox,
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(left: context.screenWidth * .05),
-                child:
-                    "All transaction history".text.white.size(20).bold.make(),
-              ),
-            ),
-            10.heightBox,
+            20.heightBox,
             Obx(
               () => controller.transactionList.isEmpty
                   ? Center(
