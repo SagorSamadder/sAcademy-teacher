@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:edgefly_academy_admin/app/Transactions/view/transaction_view.dart';
 import 'package:edgefly_academy_admin/app/widgets/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -141,7 +142,9 @@ class WalletScreen extends StatelessWidget {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xff3777c8)),
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(() => const TransactionScreen());
+                              },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

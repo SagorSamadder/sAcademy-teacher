@@ -149,6 +149,7 @@ class WithdrawScreen extends StatelessWidget {
                         ),
                         10.heightBox,
                         TextFormField(
+                          controller: controller.passController,
                           decoration: InputDecoration(
                             prefixIcon: const Icon(Icons.balance),
                             filled: true,
