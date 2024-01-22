@@ -63,12 +63,29 @@ void showTransactionDetails(BuildContext context, questionData) {
                 children: [
                   "Account No ".text.size(18).make(),
                   "${questionData['number']}".text.make(),
-                  10.heightBox,
+                  8.heightBox,
                   "Amount".text.size(18).make(),
                   "${questionData['amount']}".numCurrency.text.make(),
-                  10.heightBox,
+                  8.heightBox,
                   "Transaction ID".text.size(18).make(),
                   "${questionData['timestamp']}".text.make(),
+                  8.heightBox,
+                  "Time and Date".text.size(18).make(),
+                  "${questionData['time']}".text.make(),
+                  8.heightBox,
+                  "Status".text.size(18).make(),
+                  "${questionData['status']}"
+                      .text
+                      .color(
+                        questionData['status'] == 'accepted'
+                            ? const Color.fromARGB(255, 6, 120, 219)
+                            : (questionData['status'] == 'pending'
+                                ? Colors.black
+                                : Colors.red),
+                      )
+                      .size(16)
+                      .semiBold
+                      .make(),
                 ],
               )
             ],

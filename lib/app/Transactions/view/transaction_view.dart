@@ -67,9 +67,10 @@ class TransactionScreen extends StatelessWidget {
                         return Container(
                           padding: const EdgeInsets.all(8),
                           margin: EdgeInsets.only(
-                              left: context.screenWidth * .05,
-                              right: context.screenWidth * .05,
-                              bottom: context.screenWidth * .04),
+                            left: context.screenWidth * .05,
+                            right: context.screenWidth * .05,
+                            bottom: context.screenWidth * .04,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
