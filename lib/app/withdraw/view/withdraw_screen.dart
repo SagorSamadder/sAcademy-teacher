@@ -114,7 +114,7 @@ class WithdrawScreen extends StatelessWidget {
                         10.heightBox,
                         Align(
                           alignment: Alignment.centerLeft,
-                          child: "Nogod or Bikash account".text.make(),
+                          child: "Nogod account no".text.make(),
                         ),
                         10.heightBox,
                         TextFormField(

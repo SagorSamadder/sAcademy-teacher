@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class WithdrawController extends GetxController {
   TextEditingController amountController = TextEditingController();
@@ -16,6 +17,7 @@ class WithdrawController extends GetxController {
     return currentTime.toUtc().toIso8601String();
   }
 
+  String formattedDate = DateFormat('MMMM d, y hh:mm a').format(DateTime.now());
   var isloading = false.obs;
 
   proceedWithdraw(context) async {
@@ -28,6 +30,7 @@ class WithdrawController extends GetxController {
         'timestamp': timestamp,
         'amount': amountController.text,
         'number': numberController.text,
+        'time': formattedDate,
       };
 
       await FirebaseFirestore.instance

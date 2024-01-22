@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 void showTransactionDetails(BuildContext context, questionData) {
@@ -37,7 +38,9 @@ void showTransactionDetails(BuildContext context, questionData) {
                     Align(
                       alignment: Alignment.centerRight,
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.back();
+                        },
                         icon: const Icon(
                           Icons.close,
                           size: 30,
@@ -55,11 +58,18 @@ void showTransactionDetails(BuildContext context, questionData) {
                 ),
               ),
               10.heightBox,
-              Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: ["Account no ".text.make()],
-                ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  "Account No ".text.size(18).make(),
+                  "${questionData['number']}".text.make(),
+                  10.heightBox,
+                  "Amount".text.size(18).make(),
+                  "${questionData['amount']}".numCurrency.text.make(),
+                  10.heightBox,
+                  "Transaction ID".text.size(18).make(),
+                  "${questionData['timestamp']}".text.make(),
+                ],
               )
             ],
           ),
