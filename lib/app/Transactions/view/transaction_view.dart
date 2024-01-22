@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../widget/transaction_details.dart';
+
 class TransactionScreen extends StatelessWidget {
   const TransactionScreen({super.key});
 
@@ -80,7 +82,9 @@ class TransactionScreen extends StatelessWidget {
                             ],
                           ),
                           child: ListTile(
-                            onTap: () {},
+                            onTap: () {
+                              showTransactionDetails(context, questionData);
+                            },
                             subtitle: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
