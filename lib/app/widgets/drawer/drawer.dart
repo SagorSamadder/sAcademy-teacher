@@ -1,3 +1,4 @@
+import 'package:edgefly_academy_admin/app/privacy_policy/view/privacy_policy_view.dart';
 import 'package:edgefly_academy_admin/app/wallet/view/wallet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -45,7 +46,9 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.policy),
             title: const Text('Privacy policy'),
-            onTap: () {},
+            onTap: () {
+              Get.offAll(() => const PrivacyPolicy());
+            },
           ),
           ListTile(
             leading: const Icon(Icons.comment),
