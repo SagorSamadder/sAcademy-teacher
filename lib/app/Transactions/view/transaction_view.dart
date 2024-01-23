@@ -121,8 +121,9 @@ class TransactionScreen extends StatelessWidget {
                                 const Text(
                                   "Status:  ",
                                   style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                                 Text(
                                   "${questionData['status']}",
