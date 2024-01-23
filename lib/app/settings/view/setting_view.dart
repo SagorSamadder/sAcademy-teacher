@@ -5,82 +5,116 @@ import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../../widgets/drawer/drawer.dart';
 
-class SettingScreen extends StatelessWidget {
+class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
+
+  @override
+  State<SettingScreen> createState() => _SettingScreenState();
+}
+
+class _SettingScreenState extends State<SettingScreen> {
+  var switchnewvalue = true;
+  var darkmodevalu = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xff3877c8),
         title: const Text('setting screen'),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            50.heightBox,
-            Container(
-              height: 70,
-              width: context.screenWidth * .70,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: const [
-                  BoxShadow(
-                    blurRadius: 3.0,
-                  ),
-                ],
-              ),
-              child: const Center(
-                child: Text("Privacy policy"),
-              ),
-            ),
-            20.heightBox,
-            Container(
-              height: 70,
-              width: context.screenWidth * .70,
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 140, 236, 190),
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 140, 236, 190),
-                    blurRadius: 3.0,
-                  ),
-                ],
-              ),
-              child: const Center(
-                child: Text("Terms & Condition"),
-              ),
-            ),
-            const Spacer(),
-            SizedBox(
-              height: 50,
-              width: 200,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff3777c8)),
-                onPressed: () async {
-                  await FirebaseAuth.instance.signOut();
-                  Get.offAll(() => const SigninScreen());
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      Icons.logout,
-                      color: Colors.white,
-                    ),
-                    10.widthBox,
-                    const Text(
-                      "Log out",
-                      style: TextStyle(color: Colors.white),
-                    )
-                  ],
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xff3777c8),
+              Color.fromARGB(255, 89, 215, 247),
+            ],
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                  border: Border.all(),
+                ),
+                child: ListTile(
+                  title: "Notifications".text.make(),
+                  trailing: Switch(
+                      value: switchnewvalue,
+                      onChanged: (value) {
+                        setState(() {
+                          switchnewvalue = value;
+                        });
+                      }),
                 ),
               ),
-            ),
-            50.heightBox,
-          ],
+              10.heightBox,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                  border: Border.all(),
+                ),
+                child: ListTile(
+                  title: "Dark mode".text.make(),
+                  trailing: Switch(
+                      value: darkmodevalu,
+                      onChanged: (value) {
+                        setState(() {
+                          darkmodevalu = value;
+                        });
+                      }),
+                ),
+              ),
+              10.heightBox,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                  border: Border.all(),
+                ),
+                child: ListTile(
+                  title: "Contuct us".text.make(),
+                  trailing: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.call)),
+                ),
+              ),
+              const Spacer(),
+              SizedBox(
+                height: 50,
+                width: 200,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  onPressed: () async {
+                    await FirebaseAuth.instance.signOut();
+                    Get.offAll(() => const SigninScreen());
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.logout,
+                        color: Colors.white,
+                      ),
+                      10.widthBox,
+                      const Text(
+                        "Log out",
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              50.heightBox,
+            ],
+          ),
         ),
       ),
       drawer: const MyDrawer(),
