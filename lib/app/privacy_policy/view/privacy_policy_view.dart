@@ -74,7 +74,7 @@ class PrivacyPolicy extends StatelessWidget {
               10.heightBox,
               "By using Edgefly Academy, you agree to the terms outlined in this Privacy Policy."
                   .text
-                  .bold
+                  .fontWeight(FontWeight.w500)
                   .make(),
             ],
           ),
