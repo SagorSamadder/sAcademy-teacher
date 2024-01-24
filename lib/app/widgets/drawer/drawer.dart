@@ -1,4 +1,5 @@
 import 'package:edgefly_academy_admin/app/privacy_policy/view/privacy_policy_view.dart';
+import 'package:edgefly_academy_admin/app/terms_and_condition/view/terms_and_conditions.dart';
 import 'package:edgefly_academy_admin/app/wallet/view/wallet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -53,7 +54,9 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.comment),
             title: const Text('Terms & condition'),
-            onTap: () {},
+            onTap: () {
+              Get.offAll(() => const TermsAndCondition());
+            },
           ),
           ListTile(
             leading: const Icon(Icons.settings),

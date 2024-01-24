@@ -1,0 +1,2 @@
+var termsAndCondition =
+    "Welcome to Edgefly Academy ! By using our app, you agree to these Terms and Conditions. This app is designed for commercial use. Users can earn tokens by submitting multiple-choice questions, and user-generated content may be used by Edgefly Academy. Please review our Privacy Policy for information on data collection. Edgefly Academy reserves the right to terminate access, update terms, and disclaim warranties. For any questions, contact us at sagorsamadder.official@gmail.com .";
