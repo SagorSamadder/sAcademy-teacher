@@ -64,10 +64,10 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 flutter_native_splash:
   color: "#F5F5F5"
-  image: assets/icons/reading.png
+  image: assets/icons/splashreading.png
   android: true
   android_12:
-    image: assets/icons/reading.png
+    image: assets/icons/splashreading.png
     icon_background_color: "#F5F5F5"
   ios: true
   web: false
