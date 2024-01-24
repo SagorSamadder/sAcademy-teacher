@@ -2,7 +2,7 @@ var thankyoutext =
     'Thank you for using Edgefly Academy! This Privacy Policy outlines how we collect, use, and protect your personal information in connection with your use of our mobile application';
 
 var informationwecolllect1 =
-    '1.1 User-Provided Information When you use [Your App Name], we may collect information that you provide directly to us, including but not limited to:User-submitted MCQ questionsUsername or display name Email address ';
+    '1.1 User-Provided Information When you use Edgefly Academy, we may collect information that you provide directly to us, including but not limited to:User-submitted MCQ questionsUsername or display name Email address ';
 
 var informationcollect2 =
     '1.2 Automatically Collected Information We may also collect certain information automatically when you use our app, such as:Device information (e.g., device type, operating system)Log information (e.g., app usage data, IP address)Cookies and similar technologies';
