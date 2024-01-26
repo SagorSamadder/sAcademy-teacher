@@ -46,6 +46,58 @@ class QuestionDetailsScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
+                            "Category: ",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                          Expanded(
+                            child: Text(
+                              "${data['category']}",
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    10.heightBox,
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(context.screenWidth * .04),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Subject: ",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          Expanded(
+                            child: Text(
+                              "${data['subject']}",
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    10.heightBox,
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(context.screenWidth * .04),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
                             "Question: ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 18),
@@ -53,6 +105,7 @@ class QuestionDetailsScreen extends StatelessWidget {
                           Expanded(
                             child: Text(
                               "${data['question']}",
+                              style: const TextStyle(fontSize: 16),
                             ),
                           ),
                         ],
@@ -78,6 +131,7 @@ class QuestionDetailsScreen extends StatelessWidget {
                           Expanded(
                             child: Text(
                               "${data['option1']}",
+                              style: const TextStyle(fontSize: 16),
                             ),
                           ),
                         ],
@@ -103,6 +157,7 @@ class QuestionDetailsScreen extends StatelessWidget {
                           Expanded(
                             child: Text(
                               "${data['option2']}",
+                              style: const TextStyle(fontSize: 16),
                             ),
                           ),
                         ],
@@ -128,6 +183,7 @@ class QuestionDetailsScreen extends StatelessWidget {
                           Expanded(
                             child: Text(
                               "${data['option3']}",
+                              style: const TextStyle(fontSize: 16),
                             ),
                           ),
                         ],
@@ -153,6 +209,7 @@ class QuestionDetailsScreen extends StatelessWidget {
                           Expanded(
                             child: Text(
                               "${data['option4']}",
+                              style: const TextStyle(fontSize: 16),
                             ),
                           ),
                         ],
@@ -178,6 +235,7 @@ class QuestionDetailsScreen extends StatelessWidget {
                           Expanded(
                             child: Text(
                               "${data['answer']}",
+                              style: const TextStyle(fontSize: 16),
                             ),
                           ),
                         ],
