@@ -67,7 +67,7 @@ class WalletController extends GetxController {
       }
 
       // Calculate total account after processing all documents
-      totalAccount.value = acceptedCount.value * 100 - totalWithdraws.value;
+      totalAccount.value = acceptedCount.value * 2.5 - totalWithdraws.value;
       log("total account: $totalAccount");
 
       // Update the Firestore document with the latest total account value
