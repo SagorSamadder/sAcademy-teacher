@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../widget/show_dialouge.dart';
 
@@ -25,6 +26,8 @@ class AddQuestionController extends GetxController {
     return currentTime.toUtc().toIso8601String();
   }
 
+  String formattedDate = DateFormat('MMMM d, y hh:mm a').format(DateTime.now());
+
   var isloading = false.obs;
   List<String> field1Items = [
     'SSC',
@@ -32,9 +35,6 @@ class AddQuestionController extends GetxController {
     'Admission'
   ]; // Items for the first dropdown
   List<String> field2Items = [
-    'English',
-    'Bangla',
-    'Genaral math',
     'Physics',
     'Chemistry',
     'Biology',
@@ -71,6 +71,7 @@ class AddQuestionController extends GetxController {
         'answer': correctAnswerController.text,
         'status': 'pending',
         'qsUid': uid,
+        'submitTime': formattedDate,
         'timestamp': timestamp,
       };
 
@@ -80,16 +81,21 @@ class AddQuestionController extends GetxController {
           .collection("question")
           .doc(timestamp)
           .set(questionmap)
-          .then((value) {
+          .then((value) async {
+        await FirebaseFirestore.instance
+            .collection("PendingQestions")
+            .doc(timestamp)
+            .set(questionmap);
         questionController.clear();
         optioncontroller1.clear();
         optioncontroller2.clear();
         optioncontroller3.clear();
         optioncontroller4.clear();
         correctAnswerController.clear();
+
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Data uploaded Sucessfully'),
+            content: Text('Question upload Sucessfully'),
             duration: Duration(seconds: 3), // Adjust as needed
           ),
         );
