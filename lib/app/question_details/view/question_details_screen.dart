@@ -257,42 +257,24 @@ class QuestionDetailsScreen extends StatelessWidget {
                             child: const Text("Edit"),
                           ),
                         ),
-                        Obx(
-                          () => data['status'] == 'rejected' ||
-                                  data['status'] == 'pending'
-                              ? SizedBox(
-                                  width: context.screenWidth * .4,
-                                  child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.red),
-                                    onPressed: () async {
-                                      showConfirmationDialog(
-                                          context, data['timestamp']);
-                                    },
-                                    child: const Text(
-                                      "Delete",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                )
-                              : SizedBox(
-                                  width: context.screenWidth * .4,
-                                  child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.red),
-                                    onPressed: () async {
-                                      VxToast.show(
-                                        context,
-                                        msg: "you can't delete",
-                                      );
-                                    },
-                                    child: const Text(
-                                      "Delete",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                        ),
+                        SizedBox(
+                          width: context.screenWidth * .4,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.red),
+                            onPressed: () async {
+                              data['status'] == 'rejected'
+                                  ? showConfirmationDialog(
+                                      context, data['timestamp'])
+                                  : VxToast.show(context,
+                                      msg: "You can't delete this");
+                            },
+                            child: const Text(
+                              "Delete",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ],
