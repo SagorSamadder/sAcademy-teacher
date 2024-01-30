@@ -40,8 +40,11 @@ class WithdrawController extends GetxController {
           .doc(timestamp)
           .set(transaction)
           .then((value) {
-        amountController.clear();
-        numberController.clear();
+        FirebaseFirestore.instance
+            .collection('adminPayment')
+            .doc(timestamp)
+            .set(transaction);
+
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Request Sucessfull'),
