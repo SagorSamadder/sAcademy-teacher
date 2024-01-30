@@ -39,6 +39,18 @@ class QuestionEditController extends GetxController {
         'option3': option3Controller.text,
         'option4': option4Controller.text,
         'answer': correctAnswerController.text,
+      }).then((value) {
+        FirebaseFirestore.instance
+            .collection('PendingQestions')
+            .doc(documentId)
+            .update({
+          'question': questionController.text,
+          'option1': option1Controller.text,
+          'option2': option2Controller.text,
+          'option3': option3Controller.text,
+          'option4': option4Controller.text,
+          'answer': correctAnswerController.text,
+        });
       });
       Get.snackbar('Success', 'Question updated successfully');
       log('Sucess update');

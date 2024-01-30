@@ -249,10 +249,13 @@ class QuestionDetailsScreen extends StatelessWidget {
                           width: context.screenWidth * .4,
                           child: ElevatedButton(
                             onPressed: () {
-                              Get.to(() => QuestionDetailsEdit(
-                                    data: data,
-                                    documentId: data['timestamp'],
-                                  ));
+                              data['status'] == 'pending'
+                                  ? Get.to(() => QuestionDetailsEdit(
+                                        data: data,
+                                        documentId: data['timestamp'],
+                                      ))
+                                  : VxToast.show(context,
+                                      msg: "You cant't edit this");
                             },
                             child: const Text("Edit"),
                           ),
